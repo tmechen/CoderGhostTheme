@@ -13,9 +13,9 @@
         debounce = function (func, threshold, execAsap) {
             var timeout;
 
-            return function debounced () {
+            return function debounced() {
                 var obj = this, args = arguments;
-                function delayed () {
+                function delayed() {
                     if (!execAsap) {
                         func.apply(obj, args);
                     }
@@ -35,7 +35,6 @@
     $document.ready(function () {
 
         var $postContent = $(".post-content");
-        $postContent.fitVids();
 
         function updateImageWidth() {
             var $this = $(this),
@@ -62,7 +61,7 @@
     });
 
     // smartresize
-    jQuery.fn[sr] = function(fn) { return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+    jQuery.fn[sr] = function (fn) { return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
     // Arctic Scroll by Paul Adam Davis
     // https://github.com/PaulAdamDavis/Arctic-Scroll
@@ -73,7 +72,7 @@
             speed: 500
         },
 
-        allOptions = $.extend(defaults, options);
+            allOptions = $.extend(defaults, options);
 
         allOptions.elem.click(function (event) {
             event.preventDefault();
@@ -85,12 +84,12 @@
 
             if (offset) {
                 toMove = parseInt(offset);
-                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top + toMove) }, allOptions.speed);
+                $htmlBody.stop(true, false).animate({ scrollTop: ($(this.hash).offset().top + toMove) }, allOptions.speed);
             } else if (position) {
                 toMove = parseInt(position);
-                $htmlBody.stop(true, false).animate({scrollTop: toMove }, allOptions.speed);
+                $htmlBody.stop(true, false).animate({ scrollTop: toMove }, allOptions.speed);
             } else {
-                $htmlBody.stop(true, false).animate({scrollTop: ($(this.hash).offset().top) }, allOptions.speed);
+                $htmlBody.stop(true, false).animate({ scrollTop: ($(this.hash).offset().top) }, allOptions.speed);
             }
         });
 
